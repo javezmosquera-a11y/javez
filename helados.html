@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ICE CREAM UIB 🍦</title>
+    <link rel="stylesheet" href="helados.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1> ICE CREAM UIB</h1>
+        <p>¡Helados artesanales para tu día a día!</p>
+    </header>
+
+    <main>
+        <section class="menu">
+            <h2>Nuestros Helados</h2>
+            <div class="helados-container" id="helados-container">
+                </div>
+        </section>
+
+        <section class="pedido-container">
+            <h2>Tu Pedido</h2>
+            <div id="carrito">
+                <p>Tu carrito está vacío.</p>
+            </div>
+            
+            <div class="adiciones-seccion">
+                <h3>Adiciones ($1.000 pesos)</h3>
+                <div class="adiciones">
+                    <button class="adicion-btn" data-adicion="chispas">Chispas de colores</button>
+                    <button class="adicion-btn" data-adicion="chocolate">Salsa de Chocolate</button>
+                    <button class="adicion-btn" data-adicion="frutos-secos">Frutos secos</button>
+                </div>
+            </div>
+
+            <div class="total-container">
+                <p>Total: <span id="total-precio">$0.00</span></p>
+                <button id="comprar-btn">Comprar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <p> ICE CREAM UIB. Para los Chocoanos tu mejor servicio.</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/ICE-CREAM-UIB" target="_blank" class="social-icon facebook">Facebook</a>
+        <a href="https://www.instagram.com/ICE-CREAM-UIB" target="_blank" class="social-icon instagram">Instagram</a>
+        <a href="https://www.twitter.com/ICE-CREAM-UIB" target="_blank" class="social-icon twitter">Twitter</a>
+    </div>
+</footer>
+    
+
+    <script src="helados.js"></script>
+</body>
+</html>
