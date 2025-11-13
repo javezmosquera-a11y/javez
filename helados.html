@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICE CREAM UIB 🍦</title>
+
+    <!-- Enlace a tu hoja de estilos principal -->
+    <link rel="stylesheet" href="helados.css">
+
+    <!-- Fuente elegante para los textos -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ====== ESTILO DEL BOTÓN DE CERRAR SESIÓN ====== */
+        .logout-btn {
+            position: fixed; /* El botón siempre visible en pantalla */
+            top: 20px; /* Espaciado desde la parte superior */
+            right: 25px; /* Espaciado desde el borde derecho */
+            background: linear-gradient(135deg, #f369ff, #f369ff); /* Degradado tipo helado 🍦 */
+            color: white; /* Texto blanco */
+            border: none; /* Sin borde */
+            border-radius: 10px; /* Bordes redondeados */
+            padding: 10px 18px; /* Espaciado interno */
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+            transition: transform 0.2s ease, background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+            z-index: 1000; /* Para que quede sobre todo */
+        }
+
+        /* Efecto al pasar el mouse sobre el botón */
+        .logout-btn:hover {
+            transform: scale(1.05); /* Leve aumento */
+            background: linear-gradient(135deg, #f369ff, #f369ff); /* Cambio de color */
+        }
+
+        /* Animación para que el botón aparezca suavemente */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logout-btn {
+            animation: fadeIn 0.6s ease; /* Aplicar la animación */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========= VERIFICAR SESIÓN ACTIVA ========= -->
+    <script>
+        // Si el usuario no ha iniciado sesión, redirige al login
+        if (!localStorage.getItem("loggedUser")) {
+            alert("Debes iniciar sesión para acceder 🍦");
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <!-- ========= BOTÓN DE CERRAR SESIÓN ========= -->
+    <!-- Este botón elimina la sesión actual y vuelve al login -->
+    <button class="logout-btn" id="logoutBtn">Cerrar sesión</button>
+
+    <!-- ========= ENCABEZADO PRINCIPAL ========= -->
+    <header>
+        <h1>ICE CREAM UIB</h1>
+        <p>¡Helados artesanales para tu día a día!</p>
+        <a href="helados.html">
+    <img class="logo-principal" src="HELADOS IMG/logo Ice.jpg" alt="Logotipo de mi web">
+</a>
+    </header>
+
+    <!-- ========= CONTENIDO PRINCIPAL ========= -->
+    <main>
+        <!-- Sección del menú de helados -->
+        <section class="menu">
+            <h2>Nuestros Helados</h2>
+
+            <!-- Aquí se insertan los productos dinámicamente desde helados.js -->
+            <div class="helados-container" id="helados-container"></div>
+        </section>
+
+        <!-- Sección del pedido del cliente -->
+        <section class="pedido-container">
+            <h2>Tu Pedido</h2>
+
+            <!-- Aquí se muestra el carrito (actualiza con JS) -->
+            <div id="carrito">
+                <p>Tu carrito está vacío.</p>
+            </div>
+            
+            <!-- Opciones adicionales que el cliente puede agregar -->
+            <div class="adiciones-seccion">
+                <h3>Adiciones ($1.000 pesos)</h3>
+                <div class="adiciones">
+                    <button class="adicion-btn" data-adicion="chispas">Chispas de colores</button>
+                    <button class="adicion-btn" data-adicion="chocolate">Salsa de Chocolate</button>
+                    <button class="adicion-btn" data-adicion="frutos-secos">Frutos secos</button>
+                </div>
+            </div>
+
+            <!-- Total a pagar y botón para comprar -->
+            <div class="total-container">
+                <p>Total: <span id="total-precio">$0.00</span></p>
+                <button id="comprar-btn">Comprar</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========= PIE DE PÁGINA ========= -->
+    <footer>
+        <p>ICE CREAM UIB. Para los Chocoanos tu mejor servicio.</p>
+
+        <!-- Enlaces a redes sociales -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/ICE-CREAM-UIB" target="_blank" class="social-icon facebook">Facebook</a>
+            <a href="https://www.instagram.com/ICE-CREAM-UIB" target="_blank" class="social-icon instagram">Instagram</a>
+            <a href="https://www.twitter.com/ICE-CREAM-UIB" target="_blank" class="social-icon twitter">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- ========= JAVASCRIPT PRINCIPAL ========= -->
+    <!-- Este script maneja los helados, el carrito y demás funciones -->
+    <script src="helados.js"></script>
+
+    <!-- ========= SCRIPT PARA CERRAR SESIÓN ========= -->
+    <script>
+        // Detectar clic en el botón "Cerrar sesión"
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            // Eliminar los datos del usuario logueado del localStorage
+            localStorage.removeItem("loggedUser");
+
+            // Mostrar mensaje de salida
+            alert("Sesión cerrada correctamente 👋");
+
+            // Redirigir al login
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>
+ 

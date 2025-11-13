@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- Configura el idioma del texto -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Permite que se vea bien en celulares -->
+  <title>Iniciar sesión - Heladería</title>
+  <link rel="stylesheet" href="helados.css"> <!-- Conecta con los estilos generales de la página -->
+
+  <style>
+    /* Fondo degradado estilo heladería */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6e6, #fff0b3, #e0ffe0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-size: cover;
+    }
+
+    /* Caja blanca del formulario */
+    .auth-container {
+      max-width: 400px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      animation: pop 0.8s ease; /* Animación de aparición */
+    }
+
+    /* Animación para que la caja aparezca suavemente */
+    @keyframes pop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Logo de la heladería */
+    .auth-logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    /* Título del formulario */
+    h2 {
+      color: #ff7b00;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    /* Campos de entrada (usuario y contraseña) */
+    .auth-input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #ffd6a5;
+      border-radius: 10px;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+
+    /* Efecto cuando se selecciona el campo */
+    .auth-input:focus {
+      border-color: #ff7b00;
+      outline: none;
+      box-shadow: 0 0 6px rgba(255, 123, 0, 0.4);
+    }
+
+    /* Botón de iniciar sesión */
+    .auth-button {
+      width: 95%;
+      padding: 12px;
+      background: linear-gradient(135deg, #ff7b00, #ffb347);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    /* Efecto cuando el mouse pasa sobre el botón */
+    .auth-button:hover {
+      background: linear-gradient(135deg, #ff9500, #ffd166);
+      transform: scale(1.03);
+    }
+
+    /* Enlace para ir al registro */
+    .auth-link {
+      display: block;
+      margin-top: 15px;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    /* Efecto al pasar sobre el enlace */
+    .auth-link:hover {
+      color: #ff7b00;
+    }
+
+    /* Mensaje de error (si el usuario o contraseña no existen) */
+    #error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenedor principal del formulario -->
+  <div class="auth-container">
+
+    <!-- Logo de la heladería -->
+    <img src="imagenes/logo.png" alt="Logo Heladería" class="auth-logo">
+
+    <!-- Título del formulario -->
+    <h2>🍧 Iniciar sesión</h2>
+
+    <!-- Formulario de login -->
+    <form id="loginForm">
+      <input class="auth-input" type="text" id="username" placeholder="Usuario" required> <!-- Campo usuario -->
+      <input class="auth-input" type="password" id="password" placeholder="Contraseña" required> <!-- Campo contraseña -->
+      <button class="auth-button" type="submit">Entrar</button> <!-- Botón para enviar -->
+    </form>
+
+    <!-- Aquí se muestra un mensaje si los datos están mal -->
+    <p id="error-message"></p>
+
+    <!-- Enlace para ir a registrarse -->
+    <a href="register.html" class="auth-link">¿No tienes cuenta? Regístrate aquí</a>
+  </div>
+
+  <!-- Conexión al archivo JavaScript que valida el login -->
+  <script src="login.js"></script>
+</body>
+</html>

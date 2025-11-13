@@ -1,0 +1,215 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fce4fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+header {
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    padding: 20px 40px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.logo-principal {
+   
+    width: 80px; 
+    height: auto; 
+    margin-right: 20px; 
+    border-radius: 50%;
+}
+
+
+
+header h1 {
+
+    margin: 0;
+    font-size: 2.5em;
+    color: #f369ff; 
+}
+
+header p {
+    
+    margin: 0 0 0 15px; 
+    font-size: 1.1em;
+    color: #555;
+}
+
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex: 1;
+}
+
+/* Estilos para las imágenes de los helados */
+.helado-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.menu {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    max-width: 800px;
+}
+
+.helados-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.helado-card {
+    background-color: #fff0fe;
+    border: 1px solid #ffb6fe;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+} 
+
+
+
+
+.helado-card:hover {
+    transform: translateY(-5px);
+}
+
+.helado-card h3 {
+    font-size: 1.2rem;
+    color: #e169ff;
+    margin-top: 0;
+}
+
+.helado-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.add-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+}
+
+.pedido-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#carrito {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 150px;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #ddd;
+    padding: 0.5rem 0;
+}
+
+.item-carrito:last-child {
+    border-bottom: none;
+}
+
+.adiciones-seccion {
+    margin-bottom: 1rem;
+}
+
+.adiciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.adicion-btn {
+    background-color: #ffb6ff;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.adicion-btn:hover {
+    background-color: #ff99fa;
+}
+
+.total-container {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #a60bbd;
+}
+
+#comprar-btn {
+    background-color: #a00fc4;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+#comprar-btn:hover {
+    background-color: #930ac9;
+}
+
+footer {
+    background-color: #7414af;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
