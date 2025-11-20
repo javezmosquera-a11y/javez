@@ -4,8 +4,6 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
 }
 
@@ -102,15 +100,20 @@ main {
 
 .pedido-container {
     background-color: #fff;
-    padding: 2rem;
+    padding: 1.2rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;     /* también puedes reducir el ancho */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
+    justify-content: flex-start;
+
+    max-height: 480px;    /* ← controla que no crezca demasiado */
+    overflow-y: auto;     /* ← permite scroll interno */
 }
+
 
 #carrito {
     border: 1px solid #eee;
@@ -160,7 +163,6 @@ main {
 .total-container {
     text-align: right;
     font-size: 1.5rem;
-    font-weight: bold;
     color: #a60bbd;
 }
 
@@ -187,4 +189,14 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: auto;
+}
+/* Evitar que cualquier contenedor afecte al botón */
+* {
+    position: static !important;
+}
+.social-links a {
+    color: white !important;
+}
+.social-links a:hover {
+    color: #ffd4ff;
 }

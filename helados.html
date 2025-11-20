@@ -13,22 +13,29 @@
 
     <style>
         /* ====== ESTILO DEL BOTÓN DE CERRAR SESIÓN ====== */
-        .logout-btn {
-            position: fixed; /* El botón siempre visible en pantalla */
-            top: 20px; /* Espaciado desde la parte superior */
-            right: 25px; /* Espaciado desde el borde derecho */
-            background: linear-gradient(135deg, #f369ff, #f369ff); /* Degradado tipo helado 🍦 */
-            color: white; /* Texto blanco */
-            border: none; /* Sin borde */
-            border-radius: 10px; /* Bordes redondeados */
-            padding: 10px 18px; /* Espaciado interno */
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer; /* Cambia el cursor al pasar el mouse */
-            transition: transform 0.2s ease, background 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
-            z-index: 1000; /* Para que quede sobre todo */
-        }
+       .logout-btn {
+    position: fixed !important;  /* se queda quieto SIEMPRE */
+    top: 15px !important;
+    right: 20px !important;
+
+    background: #f369ff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+
+    z-index: 100000 !important;   /* queda por encima de TODO */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    pointer-events: auto !important;
+
+    transition: transform 0.2s ease;
+     animation: fadeIn 0.6s ease; /* Aplicar la animación */
+}
+
 
         /* Efecto al pasar el mouse sobre el botón */
         .logout-btn:hover {
@@ -40,10 +47,6 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        .logout-btn {
-            animation: fadeIn 0.6s ease; /* Aplicar la animación */
         }
     </style>
 </head>
@@ -110,7 +113,7 @@
         <p>ICE CREAM UIB. Para los Chocoanos tu mejor servicio.</p>
 
         <!-- Enlaces a redes sociales -->
-        <div class="social-links">
+        <div class="social-links"> 
             <a href="https://www.facebook.com/ICE-CREAM-UIB" target="_blank" class="social-icon facebook">Facebook</a>
             <a href="https://www.instagram.com/ICE-CREAM-UIB" target="_blank" class="social-icon instagram">Instagram</a>
             <a href="https://www.twitter.com/ICE-CREAM-UIB" target="_blank" class="social-icon twitter">Twitter</a>
